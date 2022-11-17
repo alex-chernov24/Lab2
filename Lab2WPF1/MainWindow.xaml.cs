@@ -26,7 +26,7 @@ namespace Lab2WPF
         {
             InitializeComponent();
         }
-        
+
         public void btStartCalculte(object sender, RoutedEventArgs e)
         {
             try

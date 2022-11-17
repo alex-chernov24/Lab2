@@ -11,7 +11,11 @@ namespace Lab2WPF.Classes
     {
         int CountOfRowAndColumn { get; set; }
         public T[,] Arr { get; set; }
-
+        public T this [ int index1,int index2]
+        {
+            set { Arr[index1, index2] = value; }
+            get { return Arr[index1, index2]; }
+        }
         public MatrixClass(int CountOfRowAndColumn)
         {
             if (CountOfRowAndColumn > 0)
@@ -56,7 +60,7 @@ namespace Lab2WPF.Classes
                 {
                     for (int j = 0; j < MatrixA.CountOfRowAndColumn; j++)
                     {
-                        MatrixResult.Arr[i, j] = Add(MatrixA.Arr[i, j], MatrixB.Arr[i, j]);
+                        MatrixResult[i, j] = Add(MatrixA[i, j], MatrixB[i, j]);
                     }
                 }
                 return MatrixResult;
@@ -78,7 +82,7 @@ namespace Lab2WPF.Classes
                     {
                         for (int k = 0; k < MatrixA.CountOfRowAndColumn; k++)
                         {
-                            MatrixResult.Arr[i, j] = Mult(MatrixA.Arr[i, k], MatrixB.Arr[k, j], MatrixResult.Arr[i, j]);
+                            MatrixResult[i, j] = Mult(MatrixA[i, k], MatrixB[k, j], MatrixResult[i, j]);
                         }
                     }
                 }
@@ -130,7 +134,7 @@ namespace Lab2WPF.Classes
             }
             return Save.ToString();
         }
-        public override bool Equals(object obj) // сотрим одинаковые ли матрицы или нет
+        public override bool Equals(object obj) // смотрим одинаковые ли матрицы или нет
         {
             MatrixClass<T> MatrixB = obj as MatrixClass<T>;
             if (CountOfRowAndColumn == MatrixB.CountOfRowAndColumn)

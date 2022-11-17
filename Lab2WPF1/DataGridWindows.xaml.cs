@@ -39,7 +39,6 @@ namespace Lab2WPF
             this.MatrixA = GetType(a);
             this.MatrixB = GetType(a);
             this.MatrixRes = GetType(a);
-            //MatrixOne.Columns = a;
             if (Typing == 0)
             {
                 MatrixClass<int> Matrix1 = MatrixA as MatrixClass<int>;
@@ -250,7 +249,7 @@ namespace Lab2WPF
                 MatrixClass<float> Matrix2 = MatrixB as MatrixClass<float>;
                 MTXUpdate(AMatricaTable, Matrix1);
                 MTXUpdate(BMatricaTable, Matrix2);
-                if(cmbCalcType.SelectedIndex == 0)
+                if (cmbCalcType.SelectedIndex == 0)
                 {
                     DataGridUpdate(ResMatricaTable, Matrix1 + Matrix2);
                     System.IO.File.WriteAllText("D://Matrix.csv", (Matrix1 + Matrix2).SaveFile());

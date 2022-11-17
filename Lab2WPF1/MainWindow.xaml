@@ -5,7 +5,10 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Lab2WPF"
         mc:Ignorable="d"
-        Title="MainWindow" Height="170" Width="420">
+        Title="ChernovLab2" Height="320" Width="420">
+    <Window.Background>
+        <ImageBrush ImageSource="7c5a694428b3ea9c89864dbd56355b56.jpg" />
+    </Window.Background>
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="30"/>
@@ -19,9 +22,10 @@
             <ColumnDefinition Width="100"/>
             <ColumnDefinition Width="60"/>
         </Grid.ColumnDefinitions>
-        <TextBlock Text="Кол-во строк и столбцов" Grid.Column="1" Grid.Row="0" Margin="15 5 15 5"/>
-        <TextBox x:Name="tbCountRowAndColumn" Grid.Row="1" Grid.Column="1" Grid.ColumnSpan="2" Margin="15"/>
-        <Button x:Name="Start" Content="Start" Grid.Row="2" Grid.Column="1" Grid.ColumnSpan="2" Margin="10" Click="btStartCalculte"/>
+        <TextBlock Text="Размер матрицы" Grid.Column="1" Grid.Row="1" Margin="15.2,14.8,14.6,45" Grid.RowSpan="2"/>
+        <TextBox x:Name="tbCountRowAndColumn" Grid.Row="1" Grid.Column="2"  Margin="15"/>
+        <Button x:Name="Старт" Content="Start" Grid.Row="3" Grid.Column="1" Grid.ColumnSpan="2" Margin="10.2,10,10.4,-19.2" Click="btStartCalculte"/>
+        <TextBlock Text="Тип данных" Grid.Column="1" Grid.Row="0" Margin="15 5 15 5"/>
         <ComboBox Name="cmbTyping" Height="25" Grid.Column="2" Grid.Row="0" SelectedIndex="0">
             <ComboBoxItem>int</ComboBoxItem>
             <ComboBoxItem>long</ComboBoxItem>
